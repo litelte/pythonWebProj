@@ -1,0 +1,7 @@
+{
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
+    },
+    "python.formatting.provider": "black"
+}
