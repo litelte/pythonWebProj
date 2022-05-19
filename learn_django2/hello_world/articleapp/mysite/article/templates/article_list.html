@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>django的列表</title>
+    </head>
+    <body>
+        <!-- 得到的是一个集合列表 -->
+        {% comment %} 用魔法标签 {% endcomment %}
+        {% for article in articles %}
+            {% comment %} <a href="/articleapp/{{ article.pk }}">{{ article.title }}</a>
+            {% endcomment %}
+            <a href="/articleapp/{{ article.pk }}">{{ article.title }}</a>
+            {% comment %} 还有更好的方法 {% endcomment %}
+        {% endfor %}
+        <p>第二种写法：用魔法标签</p>
+        {% for article in articles %}
+            <a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a>
+        {% endfor %}
+    </body>
+</html>
