@@ -37,7 +37,10 @@ def article_detail(request, article_id):
 
 
 def article_list(request):
-    articles = Article.objects.all()
+    # 这里也是可以选择显示的对象
+    # articles = Article.objects.all()
+    # 这样设置的话，可以发现，is_deleted=True字段的内容都看不到了
+    articles = Article.objects.filter(is_deleted=False)
     context = {}
     context["articles"] = articles
     return render(request, "article_list.html", context)
