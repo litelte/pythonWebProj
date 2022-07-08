@@ -14,8 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+# 再次导入re_path
+from django.urls import path, re_path
 
+# 得先导入，才能使用
+from . import views
+
+# from ..review_hw_app import views
+
+# 这个文件是负责全局路由设置的，路由处理请求，最后响应请求，并返回内容views
+# patterns是模式的意思，这里就是url模式
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    # path方法的格式：（页面，方法）
+    path("", views.index),
+    # 这里是re_path的写法
+    # re_path(" ^$", views.index),
 ]

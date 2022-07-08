@@ -6,8 +6,10 @@
     "python.formatting.provider": "black",
     "python.defaultInterpreterPath": "/home/ubuntu/miniconda3/envs/ubuntu2204VMenv/bin/python",
     "cSpell.words": [
+        "jxana",
         "readed",
         "testblog",
-        "testdj"
+        "testdj",
+        "ydas"
     ]
 }
